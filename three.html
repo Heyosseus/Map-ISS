@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trader Three</title>
+    <link rel="stylesheet" href="./three.html">
+    <style>
+           :root{
+            --clr-dark: 230 35% 23%;
+            --clr-light: 231 47% 90%;
+            --clr-white: 0 0% 100%; 
+
+            --primary-color: #1D8A99;
+            --secondary-color: #3586A1;
+            --sky-blue: #4D81A9;
+            --viridian-green: #199AA6;
+        }
+
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;   
+        }
+        
+
+        body{
+            background: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .input__name{
+            height: 30px;
+            margin: 1rem;
+        }
+        label{
+            display: flex;
+        }
+        .text__input{
+            margin: 1rem;
+            box-shadow: black;
+            border: none;
+            outline:none;
+            height: 35px;
+            background: #2d2d2d23;
+            font-size: 18px;
+            width: 92%;
+        }
+
+        .card{
+            background: hsl(var(--clr-light));
+            width: 500px;
+            display: block;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.301) ;
+            animation: floating 3s linear 1s infinite;
+            
+        }
+        .label__heading{
+            margin: 1rem; 
+            font: 600 1rem 'Quicksand' , sans-serif;
+            font-size: 22px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        @keyframes floating{
+            0%{transform:translateX(0px)}
+            50%{transform:translateX(20px)}
+            100%{transform:translateX(0px)}
+        }
+
+        #card{  animation: puff 2s linear infinite;}
+
+
+        /* bottom buttons */
+             #filename{
+                width: calc(100% - 300px);
+                border: 2px solid var(--viridian-green);
+                border-radius: 4px;
+                padding: 0 8px;
+                height: 40px ;
+                line-height: 50px;
+                font-size: 20px;
+                margin-left: 25px;
+                margin-bottom: 10px;
+            }
+
+            #download{
+                background: var(--viridian-green);
+                color: #fff;
+                font-size: 20px;
+                height: 40px;
+                border: none;
+                outline: none;
+                width: 180px;
+                border-radius: 4px;
+                margin-left: 55px;
+                cursor: pointer;
+
+            }
+    </style>
+</head>
+<body>
+    <div class="card swing">
+        <label class="label__heading" for="story">Name:</label>
+        <input class="text__input" id="text__2" name="story" autofocus placeholder="">
+    
+    
+        <label class="label__heading" for="story">Trading history:</label>
+        <textarea class="text__input" id="text__1" name="story" rows="5" cols="33" placeholder="...">
+            </textarea>
+    
+        <label class="label__heading" for="story">Data:</label>
+        <textarea class="text__input" id="text" name="story" rows="5" cols="33" placeholder="...">
+            </textarea>
+    
+        <input placeholder="Specify a filename" id="filename">
+        <!-- download button -->
+        <button id="download">Download file</button>
+    
+    
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

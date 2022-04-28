@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bellefair&family=Crimson+Pro:wght@200&family=Kumbh+Sans:wght@400;700&family=Lora&family=Montserrat&family=Open+Sans&family=Poppins:wght@300&family=Quicksand&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bellefair&family=Crimson+Pro:wght@200&family=Kumbh+Sans:wght@400;700&family=Lora&family=Montserrat&family=Open+Sans&family=Poppins:wght@300&family=Quicksand&family=Radio+Canada:wght@500&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+
+    <title>Where is the ISS?</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: hsl(230, 65%, 15%);
+        }
+
+        h1{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            font-size: 42px;
+            font-family: 'Roboto', sans-serif;
+            color: rgba(255, 255, 255, 0.945);
+            padding-top: 2rem;
+        }
+        P{
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            display:flex;
+            font-size: 1.2rem;
+            font-family: 'Radio Canada', sans-serif;
+            color: rgb(255, 250, 250);
+            margin-left: 2rem;
+            padding-top: 6.5rem;
+            padding-bottom: 1.5rem;
+        }
+        .paragraph{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            
+        }
+       
+        
+        #issMap{
+            height: 500px;
+            width: 820px;
+            border-radius: 8px;
+            box-shadow: 5px 5px  rgba(0,0,0,0.6);
+            animation: floating 3s linear 1s infinite;
+        }
+        @keyframes floating{
+            0%{transform:translateX(0px)}
+            50%{transform:translateX(8px)}
+            100%{transform:translateX(0px)}
+        }
+
+        
+
+        .pos{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        .btn__menu{
+            position: absolute;
+            top:  50px;
+            left: 1520px;
+            
+            
+        }
+        .btn{
+            border-radius: 5px;
+            padding: 3px 8px;
+            font-family: 'Radio Canada', sans-serif ;
+            border: none;
+            box-shadow: 3px 3px  rgba(0,0,0,1);
+            font-size: 16px;
+            background: #fff;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .btn:hover{
+            cursor: pointer;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Where is the ISS? 🚀 </h1>
+    <div class="btn__menu">
+        <a href="https://www.nasa.gov/audience/forstudents/5-8/features/nasa-knows/what-is-the-iss-58.html" target="_blank" class="btn"> Details</a>
+    </div>
+   
+
+    <div class="paragraph"><p>
+        Latitude: <span id= "lat" style="margin-left: 10px; color: rgba(255, 255, 255, 0.815);"></span><br> </p>
+    <p>Longitude: <span id= "lon" style="margin-left: 10px; color: rgba(255, 255, 255, 0.815);"></span>
+    </p></div>
+  
+<div class="pos">
+    <div id="issMap"></div>
+</div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
