@@ -34,6 +34,7 @@
         }
         body{
             background: hsl(230, 65%, 15%);
+            height: 100vh;
         }
 
         h1{
@@ -54,8 +55,8 @@
             font-family: 'Radio Canada', sans-serif;
             color: rgb(255, 250, 250);
             margin-left: 2rem;
-            padding-top: 6.5rem;
-            padding-bottom: 1.5rem;
+            padding-top: 6rem;
+            padding-bottom:2rem;
         }
         .paragraph{
             display: flex;
@@ -89,10 +90,11 @@
         }
 
         .btn__menu{
-            position: absolute;
-            top:  50px;
-            left: 1520px;
-            
+            position: relative;
+            /* left: 1520px; */
+            justify-content: right;
+            display: flex;
+            padding-right: 10rem;
             
         }
         .btn{
@@ -109,7 +111,41 @@
 
         .btn:hover{
             cursor: pointer;
+            transform: scale(1.02);
+            font-size: 17px;
             
+        }
+
+        @media screen and (max-width:880px) {
+            h1{
+                font-size: 32px;
+            }
+            p{
+                font-size: 14px;
+                padding-top: -2rem;
+            }
+            #issMap{
+                height: 300px;
+                width: 520px;
+            }
+            .btn__menu{
+                position:relative;
+                display: flex;
+                background: transparent ;
+               
+
+            }
+            .btn{
+                background: transparent;
+                color: #fff;
+                
+            }
+            .btn:hover{
+                background: #fff;
+                color: #000;
+                transition: all 0.6s ease-in;
+                transform: scale(1.06);
+            }
         }
 
 

@@ -1,4 +1,4 @@
-    const mymap = L.map('issMap').setView([42, 43], 5);
+    const mymap = L.map('issMap').setView([22, 23], 2.4);
     const marker =  L.marker([0, 0]).addTo(mymap);
 
     const attribution = ' &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
